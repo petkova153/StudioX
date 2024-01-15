@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,6494.4" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,7353.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:uascw="clr-namespace:UiPath.Activities.System.Compression.Workflow;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="96">
       <x:String>System.Activities</x:String>
@@ -171,7 +171,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="860.8,6429.6" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+  <ueab:SequenceX DisplayName="Single Excel Process Scope" sap:VirtualizedContainerService.HintSize="860.8,7288.8" sap2010:WorkflowViewState.IdRef="SequenceX_1">
     <ueab:SequenceX.Variables>
       <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
       <Variable x:TypeArguments="x:String" Name="_out_SelectFolder_1__SelectedFolder" />
@@ -185,17 +185,14 @@
       <Variable x:TypeArguments="sd:DataTable" Name="filteredTable" />
       <Variable x:TypeArguments="x:Int32" Name="rowsCount" />
       <Variable x:TypeArguments="x:String" Name="cleanTitle" />
-      <Variable x:TypeArguments="x:Int32" Name="counter">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="counter" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_test" />
       <Variable x:TypeArguments="x:Int32" Name="sectionYT" />
       <Variable x:TypeArguments="upr:ILocalResource" Name="_out_CompressFiles_1__CompressedResource" />
       <Variable x:TypeArguments="si:FileInfo" Name="zipFile" />
       <Variable x:TypeArguments="x:Boolean" Default="[False]" Name="homePresent" />
       <Variable x:TypeArguments="x:String" Name="attachFolder" />
+      <Variable x:TypeArguments="x:Boolean" Name="_out_FolderExistsX_1__Exists" />
     </ueab:SequenceX.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -217,14 +214,14 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:FileExistsX DisplayName="File Exists" Exists="[_out_FileExistsX_1__Exists]" sap:VirtualizedContainerService.HintSize="817.6,134.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[FilePAth]" />
-    <If Condition="[_out_FileExistsX_1__Exists]" sap:VirtualizedContainerService.HintSize="817.6,5924" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[_out_FileExistsX_1__Exists]" sap:VirtualizedContainerService.HintSize="817.6,6783.2" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="784,5740.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="784,6600" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,7 +233,7 @@
               <OutArgument x:TypeArguments="x:String">[attachFolder]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[string.Format("Strings.replace(FilePAth,""Grupės.xlsx"",""\Attachments\"")")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[Strings.replace(FilePAth,"Grupės.xlsx","AttachBandTop5\")]</InArgument>
             </Assign.Value>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -244,40 +241,46 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="740.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[attachFolder]" />
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="740.8,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[attachFolder]" />
-          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="740.8,4857.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" WorkbookPath="[FilePAth]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="740.8,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;we are here&quot; + attachFolder]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="740.8,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[attachFolder]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CreateDirectory>
+          <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="740.8,5716.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ReadOnly="True" ResizeWindow="None" WorkbookPath="[FilePAth]">
             <ueab:ExcelApplicationCard.Body>
               <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="ExcelToRange" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="707.2,4588" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="707.2,5447.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ueab:ReadRangeX DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="664,169.6" sap2010:WorkflowViewState.IdRef="ReadRangeX_1" Range="[ExcelToRange.Sheet(&quot;Sheet1&quot;)]" SaveTo="[GruperDataTable]" />
-                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: What Happened to IShowSpeed Girlfriend? - YouTube" sap:VirtualizedContainerService.HintSize="664,4288.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="2e4969e6-b02f-4165-8999-bd247c55adbf" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: What Happened to IShowSpeed Girlfriend? - YouTube" sap:VirtualizedContainerService.HintSize="664,5148" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="2e4969e6-b02f-4165-8999-bd247c55adbf" Version="V2" WindowResize="Maximize">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630.4,4072" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="630.4,4931.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[GruperDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,3979.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[GruperDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="587.2,4838.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,3761.6" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,4620.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,7 +305,7 @@
                                     <uix:NCheckElement.Target>
                                       <uix:TargetAnchorable BrowserURL="https://www.youtube.com/" CvElementArea="563, 104, 673, 54" CvType="InputBox" DesignTimeRectangle="583, 174, 644, 33" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT search'" FullSelectorArgument="&lt;webctrl id='search' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='search' tag='INPUT' type='text' class='ytd-searchbox' aaname='' /&gt;" Guid="0dbc4b17-df77-4d1a-bf51-d81a7b28f800" InformativeScreenshot="2e56d521efe7b85c8664da4e9d039e20.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='YouTube' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                         <uix:TargetAnchorable.Anchors>
-                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                             <uix:Target CvTextArea="570, 191, 606, 23" CvTextArgument="comedy High-intensity interval training Gaming Ghost hunting" CvType="Text" DesignTimeRectangle="562, 165, 670, 50" ElementType="InputBox" FriendlyName="'DIV container'" FullSelectorArgument="&lt;webctrl id='container' parentid='search-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='container' parentid='search-form' tag='DIV' type='' class='style-scope ytd-searchbox' aaname='                  ' /&gt;" SearchSteps="FuzzySelector, CV" />
                                           </scg:List>
                                         </uix:TargetAnchorable.Anchors>
@@ -318,7 +321,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Home Found&quot;]" />
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search the band" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2e4969e6-b02f-4165-8999-bd247c55adbf" Text="[UiPathObjectExtensions.AsText(BandName)]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="5" DisplayName="Search the band" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="2e4969e6-b02f-4165-8999-bd247c55adbf" Text="[UiPathObjectExtensions.AsText(BandName)]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable BrowserURL="https://www.youtube.com/" CvTextArea="580, 178, 186, 24" CvTextArgument="stop snore exercises" CvType="Text" DesignTimeRectangle="562, 165, 670, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'stop snore exercises'" FullSelectorArgument="&lt;webctrl id='container' parentid='search-form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='container' parentid='search-form' tag='DIV' type='' class='style-scope ytd-searchbox' aaname='                  ' /&gt;" Guid="3f0ed6c5-ad22-4a72-a74c-b82b6ec8d0b0" InformativeScreenshot="daed6265271098312fca42a23c5ba3e8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='YouTube' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                                               <uix:TargetAnchorable.Anchors>
@@ -553,7 +556,30 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </Assign>
-                                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="510.4,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[NewFolder]" />
+                                  <ui:FolderExistsX DisplayName="Folder Exists" Exists="[_out_FolderExistsX_1__Exists]" sap:VirtualizedContainerService.HintSize="510.4,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[NewFolder]" />
+                                  <If Condition="[_out_FolderExistsX_1__Exists = true]" sap:VirtualizedContainerService.HintSize="510.4,644.8" sap2010:WorkflowViewState.IdRef="If_5">
+                                    <If.Then>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="376.8,291.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[NewFolder]" Recursive="True" />
+                                        <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[NewFolder]" />
+                                      </Sequence>
+                                    </If.Then>
+                                    <If.Else>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="376.8,170.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[NewFolder]" />
+                                      </Sequence>
+                                    </If.Else>
+                                  </If>
                                   <p:WordApplicationScope DisplayName="Use Word File" FilePath="[string.concat(NewFolder,BandName,&quot;.docx&quot;)]" sap:VirtualizedContainerService.HintSize="510.4,429.6" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
                                     <p:WordApplicationScope.Body>
                                       <ActivityAction x:TypeArguments="ui:WordDocument">
@@ -706,7 +732,8 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </uascw:CompressFiles>
-                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[attachFolder]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="510.4,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[UiPathObjectExtensions.AsText(zipFile)]" />
+                                  <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[attachFolder]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="510.4,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[UiPathObjectExtensions.AsText(zipFile)]" />
+                                  <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="510.4,80.8" sap2010:WorkflowViewState.IdRef="DeleteFolderX_2" Path="[NewFolder]" Recursive="True" />
                                 </Sequence>
                               </ActivityAction>
                             </ui:ForEachRow.Body>
@@ -728,7 +755,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ueab:ExcelApplicationCard>
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[system.io.Directory.GetFiles(attachFolder)]" Body="[string.Format(&quot;Fun facts about music:{0}8.  Finland Has the Most Metal Bands Per Capita{1}{2}Perhaps head-banging is an effective way to keep warm. According to a Reddit user who created a map using data from Encyclopedia Metallum’s archive of metal bands, Finland is home to the most bands of this genre, with 53.5 metal bands per 100,000 people. Second place was tied between two other Nordic nations Sweden and Norway (27.2), while Iceland stole third (22.7). Though heavy metal music originated in the United States and the United Kingdom, their numbers for those countries were 5.5 and 5.2, respectively.{3}{4}9.  An Astronaut Released an Album with All Songs Recorded in Space {5}{6}In 2015, a Canadian astronaut named Chris Hadfield released his first album, which was entirely recorded while he was in orbit. Not only was he the first Canadian to walk in space, he’s also a talented musician whose went viral with a cover of David Bowie’s ““Space Oddity.”” Hadfield spent 144 days at the International Space Station recording his 11 original songs for his appropriately-titled album, Space Sessions: Songs for a Tin Can.{7}{8}10.  The British Navy Uses Britney Spears Songs to Scare Off Pirates {9}{10}According to reports, British naval officers play Britney Spears songs to scare away Somali pirates off of Africa’s eastern coast. Her songs ““Oops I Did It Again”” and ““Baby One More Time”” are the songs which are used. The rationale of playing these songs is because, supposedly, Somali pirates have a strong dislike for western culture and music, which make Britney Spears’ songs a perfect fit to make the bandits move on as quickly as possible.{11}{12}Article and the rest of the facts you can find here:{13}https://valleycultural.org/news/some-silly-facts-of-music-pt-1/{14}{15}:){16}{17}This has been fun!{18}//Aleksandra&quot;, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine)]" DisplayName="Send SMTP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="740.8,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" SecureConnection="Auto" Subject="Jūsų mėgstamiausių dainų top 5">
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" AttachmentsCollection="[system.io.Directory.GetFiles(attachFolder)]" Body="[string.Format(&quot;Fun facts about music:{0}8.  Finland Has the Most Metal Bands Per Capita{1}{2}Perhaps head-banging is an effective way to keep warm. According to a Reddit user who created a map using data from Encyclopedia Metallum’s archive of metal bands, Finland is home to the most bands of this genre, with 53.5 metal bands per 100,000 people. Second place was tied between two other Nordic nations Sweden and Norway (27.2), while Iceland stole third (22.7). Though heavy metal music originated in the United States and the United Kingdom, their numbers for those countries were 5.5 and 5.2, respectively.{3}{4}Article and the rest of the facts you can find here:{5}https://valleycultural.org/news/some-silly-facts-of-music-pt-1/{6}{7}:){8}{9}This has been fun!{10}//Aleksandra&quot;, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine)]" DisplayName="Send SMTP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="740.8,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="False" SecureConnection="Auto" Subject="Jūsų mėgstamiausių dainų top 5">
             <ui:SendMail.Email>
               <InArgument x:TypeArguments="x:String">
                 <ui:AskWhenRun x:TypeArguments="x:String" />
